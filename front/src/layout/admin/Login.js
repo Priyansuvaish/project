@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     let navigate=useNavigate()
@@ -15,21 +15,20 @@ export default function Login() {
     }
     ;
     const onSubmit=async(e)=>{
-        // e.preventDefault();
-        // await axios.post("http://localhost:7070/api/admin/login",user).then(result => {
-        //     if(result.data){
-        //         navigate("/home")
-        //     }
-        //     else{
-        //         alert("Login Id Password Not Matching Please try again")
-        //         navigate("/")
-        //     }
-        // })
-        // .catch(error => {
-        //     console.log(error)
-        //     navigate("/");
-        // })
-        navigate("/home")
+        e.preventDefault();
+        await axios.post("http://localhost:9191/login",user).then(result => {
+            if(result.data){
+                navigate("/home")
+            }
+            else{
+                alert("Login Id Password Not Matching Please try again")
+                navigate("/")
+            }
+        })
+        .catch(error => {
+            console.log(error)
+            navigate("/");
+        })
     }
 
     return (
@@ -56,7 +55,7 @@ export default function Login() {
                             Password
                         </label>
                         <input
-                            type={"text"}
+                            type={"password"}
                             className="form-control"
                             placeholder='Enter your Password'
                             name="password"

@@ -35,7 +35,7 @@ export default function Student() {
           <u>Students Enrolled in {students[0].domain.program} Domain</u>
         </h3>
         <br></br>
-        <Link  className='btn btn-outline-primary mx-2' to='/home'>Home</Link>
+        <Link  className='btn btn-outline-primary mx-2' to='/home'>Home</Link><br/><br/>
         {/* {students.map((domain) => (
           <div key={domain.domain_id}>
             {course.course_name} */}

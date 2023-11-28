@@ -25,7 +25,8 @@ export default function Home() {
         <Link  className='btn btn-outline-success mx-2' to='/addDomain'>Add Domain</Link>
         <Link className='btn btn-outline-danger mx-2' to='/'> Logout</Link>
         {/* </div> */}
-        
+        <br/>
+        <br/>
         <table className="table table-warning shadow table-hover table-striped">
           <thead className="table-dark">
             <tr>
