@@ -23,6 +23,7 @@ public class Domain {
 
     @Column(name="qualification", nullable = false)
     private String qualification;
+
     public Domain(){
 
     }

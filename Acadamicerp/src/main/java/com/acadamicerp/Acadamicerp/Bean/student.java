@@ -36,8 +36,9 @@ public class student {
     @Column(name="graduation_year")
     private int graduation_year;
 
-    @Column(name = "domain",nullable = true,columnDefinition = "float default 3")
-    private int domain;
+    @ManyToOne(targetEntity = Domain.class)
+    @JoinColumn(name = "domain")
+    private Domain domain;
 
     @Column(name="placement_id",columnDefinition = "int default 0")
     private int placement_id;
@@ -85,7 +86,7 @@ public class student {
         this.graduation_year = graduation_year;
     }
 
-    public void setDomain(int domain) {
+    public void setDomain(Domain domain) {
         this.domain = domain;
     }
 
@@ -97,7 +98,7 @@ public class student {
         this.specialisation = specialisation;
     }
 
-    public student(int student_id, String roll_number, String first_name, String last_name, String email, String photograph_path, float cgpa, float total_credits, int graduation_year, int domain, int placement_id, int specialisation){
+    public student(int student_id, String roll_number, String first_name, String last_name, String email, String photograph_path, float cgpa, float total_credits, int graduation_year, Domain domain, int placement_id, int specialisation){
 
         this.student_id = student_id;
         this.roll_number = roll_number;
