@@ -8,6 +8,7 @@ export default function EditDomain() {
 
     const {id} = useParams()
 
+    console.log(id);
     const [domain,setDomain] = useState({
         program:"",
         batch:"",
@@ -27,12 +28,12 @@ export default function EditDomain() {
 
     const onSubmit=async(e)=>{
         e.preventDefault();
-        await axios.post(`http://localhost:7070/api/domain/modify/${id}`,domain)
+        await axios.put(`http://localhost:9191/domain/update/${id}`,domain)
         navigate("/home");
     }
 
     const loadDomain = async () =>{
-        const result= await axios.get(`http://localhost:7070/api/domain/get/${id}`)
+        const result= await axios.get(`http://localhost:9191/domain/${id}`)
         setDomain(result.data)
     }
 

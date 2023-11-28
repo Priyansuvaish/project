@@ -1,16 +1,14 @@
 package com.acadamicerp.Acadamicerp.controller;
 
+import com.acadamicerp.Acadamicerp.Bean.Domain;
 import com.acadamicerp.Acadamicerp.Bean.student;
 import com.acadamicerp.Acadamicerp.Repositry.StudentDAO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-
+@CrossOrigin("http://localhost:3000")
 public class StudentController {
     private final StudentDAO StudentDAO;
     public StudentController(StudentDAO StudentDAO) {
@@ -23,5 +21,10 @@ public class StudentController {
     @GetMapping("/student/detail")
     List<student> getAllDomain(){
         return StudentDAO.findAll();
+    }
+
+    @GetMapping("/student/detail/{id}")
+    List<student> getdeatail(@PathVariable Domain id){
+       return StudentDAO.findByDomain(id);
     }
 }

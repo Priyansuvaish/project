@@ -12,11 +12,9 @@ export default function Student() {
 
   const loadStudents = async () => {
     const result = await axios.get(
-      `http://localhost:7070/api/student/getStudentsByDomain/${id}`
+      `http://localhost:9191/student/detail/${id}`
     );
     setStudents(result.data);
-    // console.log(result);
-    // console.log(students);
   };
   //   let obj = JSON.stringify(students[0]);
 
@@ -24,7 +22,9 @@ export default function Student() {
 
   // console.log(students[0].course_id);
   console.log("check2");
-  if (students.length === 0) return null;
+  if (students.length === 0) return (
+      <h3>No student enrolled <br></br><Link  className='btn btn-outline-primary mx-2' to='/home'>Home</Link></h3>
+  );
   console.log("check3");
   console.log(students);
   return (

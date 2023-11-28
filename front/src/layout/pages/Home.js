@@ -11,7 +11,7 @@ export default function Home() {
 
   const loadDomains = async () => {
     const result = await axios.get(
-      "http://localhost:9191/detail"
+      "http://localhost:9191/domain/detail"
     );
     setDomains(result.data);
     console.log(result.data);

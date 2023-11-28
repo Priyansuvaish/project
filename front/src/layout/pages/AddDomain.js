@@ -21,7 +21,7 @@ export default function AddDomain() {
     
     const onSubmit=async(e)=>{
         e.preventDefault();
-        await axios.post("http://localhost:7070/api/domain/add",domain)
+        await axios.post("http://localhost:9191/domain/get",domain)
         navigate("/home");
         window.location.reload(true);
     }
