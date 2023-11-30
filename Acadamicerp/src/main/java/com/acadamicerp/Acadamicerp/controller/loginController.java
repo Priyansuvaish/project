@@ -19,7 +19,7 @@ public class loginController {
     @PostMapping("/login")
     employee verify(@RequestBody employee employee){
         employee e= loginDAO.findByEmail(employee.getEmail());
-        if(e!=null && Objects.equals(e.getPassword(), employee.getPassword())){
+        if(e!=null && e.getDepartment()==1 && Objects.equals(e.getPassword(), employee.getPassword())){
             return e;
         }
         return null;
