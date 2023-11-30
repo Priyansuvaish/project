@@ -34,7 +34,7 @@ export default function Login() {
     return (
         <div className='container' >
             <div className='row'>
-                <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow' style={{backgroundImage: "D:/project/front/src/layout/images/1st prize-Arhant_IMT2020503_6_Arhant.Arora.JPG"}}>
+                <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                     <h2 className='text-center m-4'>Admin Login</h2>
                     <form onSubmit={onSubmit}>
                     <div className='mb-3'>
